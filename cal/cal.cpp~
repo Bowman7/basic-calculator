@@ -1,0 +1,38 @@
+#include "cal.h"
+#include<iostream>
+#include<stdio>
+
+struct box
+{
+	foat val;
+	struct box *next;
+};
+
+struct box *head=NULL;
+void insert(int var)
+{
+	struct box *tmp=new box;
+	if(head==NULL)
+	{
+		head=tmp;
+		tmp->val=var;
+		tmp->next=NULL;
+	}else
+	{
+		tmp->next=head->next;
+		head=tmp;
+		tmp->val=var;
+	}
+	
+}
+
+void display()
+{
+	struct box *p;
+	p=head;
+	while(p!=NULL)
+	{
+		printf(" %d ",p->val);
+		p=p->next;
+	}
+}
