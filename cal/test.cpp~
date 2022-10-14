@@ -1,0 +1,25 @@
+#include<iostream>
+#include<SFML/Graphics.hpp>
+using namespace std;
+
+int main()
+{
+	sf::Event event;
+	sf::Window mwindow(sf::VideoMode(480,480),"sf");
+	while(mwindow.pollEvent(event))
+	{
+		switch(event.type)
+		{
+		case sf::Event::KeyPressed:
+			if(event.key.code==sf::Keyboard::W)
+			{
+				cout<<"w is pressed"<<endl;
+				
+			}
+			break;
+		case sf::Event::Closed:
+			mwindow.close();break;
+		}
+	}
+	return 0;
+}
